@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="springChat">
+	<head>
+	  <meta charset="utf-8" />
+	  <title>JuJa Webinar Room</title>
+
+	  <!-- Loading Bootstrap -->
+	  <link href="lib/flat-ui/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+	
+	  <!-- Loading Flat UI -->
+	  <link href="lib/flat-ui/dist/css/flat-ui.css" rel="stylesheet">
+	  
+	  <link href="css/chat.css?web=recursion" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+	        <div class="login">
+		        <div class="login-screen">
+		          <div class="login-icon">
+		            <h4>Welcome<small></small></h4>
+		          </div>
+		
+		          <div class="login-form" ng-controller="formController">
+		          	<p><small style="color:#666">Введи свое имя и email</small></p>
+
+		          	<form method="post" action="/login">
+			            <div class="form-group">
+			              <!--<input type="text" class="form-control login-field" placeholder="Введи свое имя" name="username" value="{{username}}"/>-->
+							<input type="text" class="form-control login-field" placeholder="Введи свое имя" ng-model="username" required />
+			              <label class="login-field-icon fui-user" for="login-name"> Имя</label>
+			            </div>
+						<input style="display:none;" type="text" name="username" value="{{fullName()}}"/>
+			            <div class="form-group">
+			              <input type="email" class="form-control login-field" name="email" ng-model="email" ng-disabled="hasToken" required/>
+			              <label class="login-field-icon fui-lock" for="login-pass"> Email</label>
+			            </div>
+						<input style="display: none;" type="checkbox" name="remember-me" checked />
+						<input style="display: none;" type="text"  name="viewertoken" value="2345789"/>
+						<input class="btn btn-primary btn-lg btn-block"  type="submit" value="Войти"/>
+		            </form>
+		          </div>
+		        </div>
+		      </div>
+	    </div>
+	    <!-- /.container -->
+		<script src="lib/angular/angular.min.js"></script>
+		<script>
+            var app = angular.module('springChat', []);
+            app.controller('formController', function($scope) {
+//                var foo = getParameterByName('foo');
+                if (getParameterByName('name')!==null && getParameterByName('name')!=="")
+                    $scope.username = getParameterByName('name');
+                else $scope.username ="";
+                if (getParameterByName('viewertoken')!==null && getParameterByName('viewertoken')!=="") {
+                    $scope.viewertoken = getParameterByName('viewertoken');
+                    $scope.hasToken="true";
+                }
+                else $scope.viewertoken="";
+                $scope.email="";
+                $scope.fullName = function() {
+                    if ($scope.viewertoken!==null && $scope.viewertoken!="")
+                        return $scope.username + "@" + $scope.viewertoken;
+                    else return $scope.username + "@" + $scope.email;
+                }
+            });
+
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+		</script>
+
+		
+	</body>
+</html>
