@@ -4,12 +4,15 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve  --proxy-config proxy-conf.json --serve-path='/partner/'",
+    "build": "rimraf dist && ng build -prod",
+    "postbuild": "npm run deploy",
+    "predeploy": "rimraf ../resources/static/partner/ && mkdirp ../resources/static/partner",
+    "deploy": "copyfiles -f dist/** ../resources/static/partner",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-  },
+  },,
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.2.4",
