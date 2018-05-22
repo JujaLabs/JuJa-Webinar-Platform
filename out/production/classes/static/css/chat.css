@@ -1,0 +1,326 @@
+.container {
+  width: 970px !important;
+}
+
+.fluid-container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navbar h1 {
+	margin-top: 15px;
+	font-size: 22px;
+	float:left;
+	color: #fff;
+}
+
+.chat-box {
+	/*height:400px;*/
+	/*overflow: auto;*/
+	height:auto;
+}
+
+.participant {
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+}
+
+.message-time {
+	font-size: 12px;
+	color: #999999;
+}
+
+.message-remove {
+	color: #ff0000;
+	font-size: 12px;
+}
+
+.u-offer-btnBuy {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+
+@font-face {
+	font-family: AvenirNext-Regular;
+	letter-spacing: normal;
+	font-stretch: normal;
+	src: url(../fonts/AvenirNext-Regular.woff) format('woff')
+}
+
+@font-face {
+	font-family: Azbuka04;
+	letter-spacing: normal;
+	font-stretch: normal;
+	src: url(../fonts/Azbuka04.woff) format('woff')
+}
+
+#core,
+#core_ee,
+#prepayment {
+	/*display: none*/
+}
+
+.b-page {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	line-height: 1.3rem;
+	font-family: AvenirNext-Regular, arial;
+	color: #363636;
+	background-color: #fafafa
+}
+
+.b-page__section {
+	margin: 1rem 0;
+	padding: 1rem 0
+}
+
+.b-page__section--header {
+	margin-top: 20px
+}
+
+.u-page-title {
+	color: #424242;
+	font-size: 3rem
+}
+
+.u-page-subtitle {
+	color: #212121;
+	font-size: 2.5rem
+}
+
+.u-page-logo {
+	height: 3rem;
+	width: 3rem
+}
+
+.u-page-information {
+	color: #212121;
+	font-size: 2rem;
+	text-transform: uppercase
+}
+
+.u-page-contacts {
+	font-size: 1.8rem;
+	color: #212121;
+	text-decoration: none
+}
+
+.u-section-video {
+	position: relative;
+	min-height: 500px;
+	overflow: hidden
+}
+
+.u-section-video embed,
+.u-section-video iframe,
+.u-section-video object {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+}
+
+.u-viewers-block {
+	padding: 20px;
+	font-size: 16px;
+}
+
+.u-offer-group {
+	background: #dddddd;
+	line-height: 2rem;
+	padding: .1rem 0;
+	margin: 1rem
+}
+
+.u-offer {
+	overflow: hidden;
+	margin: 1rem 0;
+	padding: .5rem 0
+}
+
+.u-offer-title {
+	font-family: Azbuka04, AvenirNext-Regular;
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-size: 2rem
+}
+
+.u-offer-subtitle {
+	font-size: 1.6rem;
+	text-transform: uppercase
+}
+
+.u-offer-sale {
+	font-size: 1.9rem;
+	color: #fff;
+
+}
+
+.u-offer-sale-blue {
+	background-color: #337ab7;
+}
+
+.u-offer-sale-green {
+	background-color: #5cb85c;
+}
+
+.u-offer-sale-purple {
+	background-color: #663399;
+}
+
+.u-offer-sale-orange {
+	background-color: #f0ad4e;
+}
+
+.u-offer-price {
+	font-family: Azbuka04, AvenirNext-Regular;
+	font-size: 3rem;
+	text-align: center
+}
+
+.u-offer-currency {
+	vertical-align: super;
+	font-size: 2rem
+}
+
+.u-offer-btnBuy {
+	display: inline-block;
+	padding: 1rem;
+	background: #f7941d;
+	border: .1rem solid #fff;
+	font-size: 2rem;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase
+}
+
+.u-offer-btnBuy:hover {
+	border: 1px solid #fff;
+	color: #fff;
+	background: #f68e56
+}
+
+@media (min-width:750px) {
+	.u-offer-group {
+		margin: 0
+	}
+	.u-offer-title {
+		font-size: 2.7rem
+	}
+	.u-offer-subtitle {
+		font-size: 2rem
+	}
+	.u-offer-sale {
+		font-size: 2.4rem
+	}
+	.u-offer-price {
+		font-size: 4.5rem
+	}
+	.u-offer-currency {
+		font-size: 3rem
+	}
+	.u-offer-btnBuy {
+		font-size: 2.5rem
+	}
+}
+
+@media (min-width:1200px) {
+	.u-offer-group {
+		margin: 0
+	}
+	.u-offer-title {
+		font-size: 3.4rem;
+		line-height: 2.6rem
+	}
+	.u-offer-subtitle {
+		font-size: 2.4rem;
+		line-height: 2.6rem
+	}
+	.u-offer-sale {
+		font-size: 2.2rem;
+		line-height: 2.0rem
+	}
+	.u-offer-price {
+		font-size: 5rem;
+		line-height: 5rem
+	}
+	.u-offer-currency {
+		font-size: 3rem;
+		line-height: 3.4rem
+	}
+	.u-offer-btnBuy {
+		font-size: 3rem
+	}
+}
+
+#button,
+#datetime {
+	display: none
+}
+
+.youtube {
+	background-color: #000;
+	margin-bottom: 30px;
+	position: relative;
+	padding-top: 56.25%;
+	overflow: hidden;
+	cursor: pointer;
+}
+.youtube img {
+	width: 100%;
+	top: -16.84%;
+	left: 0;
+	opacity: 0.7;
+}
+.youtube .play-button {
+	width: 90px;
+	height: 60px;
+	background-color: #333;
+	box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+	z-index: 1;
+	opacity: 0.8;
+	border-radius: 6px;
+}
+.youtube .play-button:before {
+	content: "";
+	border-style: solid;
+	border-width: 15px 0 15px 26.0px;
+	border-color: transparent transparent transparent #fff;
+}
+.youtube img,
+.youtube .play-button {
+	cursor: pointer;
+}
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+	position: absolute;
+}
+.youtube .play-button,
+.youtube .play-button:before {
+	top: 50%;
+	left: 50%;
+	transform: translate3d( -50%, -50%, 0 );
+}
+.youtube iframe {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.comments {
+	/*position: absolute;*/
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow-y: scroll;
+	height:70vh;
+	/*width: 25%;*/
+}
