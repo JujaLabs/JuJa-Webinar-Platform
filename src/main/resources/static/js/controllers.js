@@ -112,7 +112,7 @@ angular.module('springChat.controllers', ['toaster'])
 
                 $scope.messages = [];
 
-                $http.get('/chatmessages/?size=1000').success(function(data){
+                $http.get('/chatmessages/?size=2000').success(function(data){
                     var messages = data['_embedded']['chatmessages'];
                     for (var i=0; i < messages.length; i++){
                         $scope.messages.unshift({id: messages[i]['id'], username: messages[i]['username'], message : messages[i]['message'], time: messages[i]['time']});
