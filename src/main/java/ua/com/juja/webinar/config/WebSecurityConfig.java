@@ -43,7 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.formLogin()
 				.loginPage("/index.html")
 				.loginProcessingUrl("/login")
-				.defaultSuccessUrl("/chat/index.html")
+//				.defaultSuccessUrl("/chat/index.html")
+				.defaultSuccessUrl("/chat.html")
 				.permitAll()
 				.and()
 			.logout()
@@ -51,18 +52,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll()
 				.and()
 			.authorizeRequests()
-				.antMatchers("/js/**", "/lib/**", "/images/**", "/css/**", "/index.html", "/", "/chat", "chat/**").permitAll()
+				.antMatchers("/js/**", "/lib/**", "/images/**", "/css/**", "/index.html", "/", "/chat/**").permitAll()
 				.antMatchers("/websocket").hasRole("ADMIN")
-				.anyRequest().authenticated()
-				.and()
+				.anyRequest().authenticated();
+//				.and()
 			//remember me configuration
 //			.rememberMe()
 //				.key("RememberKey")
 //				.rememberMeParameter("remember-me-param")
 //				.rememberMeCookieName("my-remember-me")
 //				.tokenValiditySeconds(86400);
-                .rememberMe()
-                .tokenRepository(tokenRepository);
+//                .rememberMe()
+//                .tokenRepository(tokenRepository);
 
 	}
 

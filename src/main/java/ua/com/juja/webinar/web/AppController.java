@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/chat")
-public class DefaultController {
+public class AppController {
 
     @GetMapping({"", "/", "/{[path:[^\\\\.]*}"})
     public String indexRoot() {

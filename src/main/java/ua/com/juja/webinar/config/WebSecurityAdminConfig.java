@@ -21,7 +21,7 @@ import java.util.List;
 @Order(1)
 public class WebSecurityAdminConfig extends WebSecurityConfigurerAdapter {
 
-	private static final String SECURE_ADMIN_PASSWORD = "********";
+	private static final String SECURE_ADMIN_PASSWORD = "password";
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -39,6 +39,7 @@ public class WebSecurityAdminConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.authorizeRequests()
 //				.antMatchers("/js/**", "/lib/**", "/images/**", "/css/**", "/index.html", "/").permitAll()
+
 				.antMatchers("/js/**", "/lib/**", "/images/**", "/css/**", "/index.html", "/").hasRole("ADMIN")
 				.antMatchers("/websocket").hasRole("ADMIN")
 				.antMatchers("/admin*").hasRole("ADMIN")
@@ -50,7 +51,7 @@ public class WebSecurityAdminConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
 				.withUser("ADMIN")
-				.password("*********")
+				.password("password")
 				.roles("ADMIN");
 	}
 

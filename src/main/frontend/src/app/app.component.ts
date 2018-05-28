@@ -14,7 +14,7 @@ export class AppComponent {
   private serverUrl = 'http://localhost:8080/socket';
 
   constructor(){
-    this.initializeWebSocketConnection();
+    // this.initializeWebSocketConnection();
   }
 
   // private wrappedSocket = {
@@ -51,24 +51,27 @@ export class AppComponent {
 
 
 
-  initializeWebSocketConnection(){
-    let ws = new SockJS(this.serverUrl);
-    this.stompClient = Stomp.over(ws);
-    let that = this;
-    this.stompClient.connect({}, function(frame) {
-      that.stompClient.subscribe("/chat", (message) => {
-        if(message.body) {
-          $(".chat").append("<div class='message'>"+message.body+"</div>")
-          console.log(message.body);
-        }
-      });
-    });
-  }
-
-  sendMessage(message){
-    this.stompClient.send("/app/send/message" , {}, message);
-    $('#input').val('');
-  }
+  // initializeWebSocketConnection(){
+  //   let ws = new SockJS(this.serverUrl);
+  //   this.stompClient = Stomp.over(ws);
+  //   let that = this;
+  //   this.stompClient.connect({}, function(frame) {
+  //     that.stompClient.subscribe("/chat", (message) => {
+  //       if(message.body) {
+  //         $(".chat").append("<div class='message'>"+message.body+"</div>")
+  //         console.log(message.body);
+  //       }
+  //     });
+  //   });
+  // }
+  //
+  // sendMessage(message){
+  //   this.stompClient.send("/app/chat.message" , {}, message);
+  //   $('#input').val('');
+  // }
 
 
 }
+
+
+
